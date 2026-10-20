@@ -1127,26 +1127,7 @@ document.getElementById('apApply').onclick=()=>{save();close();alert('Visual sal
 const obs=new MutationObserver(()=>{fab.style.display=isAdm()?'block':'none'});obs.observe(document.body,{subtree:true,attributes:true,attributeFilter:['class']});
 window.addEventListener('load',()=>{apply();fab.style.display=isAdm()?'block':'none'});setTimeout(()=>{apply();fab.style.display=isAdm()?'block':'none'},500);
 })();</script></body></html> function () {
-  'use strict';
-  const KEY = 'analistaFF_access_log_v1';
-  function read() {
-    try { const x = JSON.parse(localStorage.getItem(KEY) || '[]'); return Array.isArray(x) ? x : []; }
-    catch (_) { return []; }
-  }
-  function record(type, email) {
-    const rows = read();
-    rows.push({ type, email: String(email || 'não informado').slice(0, 200), at: new Date().toISOString() });
-    localStorage.setItem(KEY, JSON.stringify(rows.slice(-500)));
-  }
-  // Registra abertura da página sem coletar endereço IP nem outros dados pessoais.
-  record('abriu_site', '');
-  window.AnalistaFFAcessos = {
-    registrarLogin(email) { record('login', email); },
-    listar() { return read().slice().reverse(); },
-    exportar() {
-      const blob = new Blob([JSON.stringify(read(), null, 2)], { type: 'application/json' });
-      const url = URL.createObjectURL(blob); const a = document.createElement('a');
-      a.href = url; a.download = 'analista-ff-acessos.json'; a.click(); URL.revokeObjectURL(url);
+  
     }
   };
 })();
