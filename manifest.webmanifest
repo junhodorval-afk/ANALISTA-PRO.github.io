@@ -1,0 +1,13 @@
+{
+  "id":"./",
+  "name":"ANALISTA FF - Esports Manager",
+  "short_name":"Analista FF",
+  "description":"Gestão de campeonatos Free Fire",
+  "start_url":"./",
+  "scope":"./",
+  "display":"standalone",
+  "orientation":"any",
+  "background_color":"#07101a",
+  "theme_color":"#18c8ff",
+  "icons":[{"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
