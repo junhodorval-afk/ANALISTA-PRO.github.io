@@ -42,7 +42,7 @@ jobs:
         shell: bash
         run: |
           mkdir -p appandroid/app/src/main/java/com/analistapro/app
-          mkdir -p appandroid/app/src/main/res/drawable
+          mkdir -p appandroid/app/src/main/res/drawable cp icon-192.png appandroid/app/src/main/res/drawable/launcher_icon.png
 
           cat > appandroid/settings.gradle <<'EOF'
           pluginManagement {
@@ -101,6 +101,7 @@ jobs:
 
               <application
                   android:label="ANALISTA PRO"
+                  android:icon="@drawable/launcher_icon"
                   android:theme="@android:style/Theme.Material.Light.NoActionBar"
                   android:usesCleartextTraffic="false"
                   android:allowBackup="false">
