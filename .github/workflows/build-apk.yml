@@ -197,16 +197,18 @@ jobs:
           cp appandroid/app/build/outputs/apk/debug/app-debug.apk ANALISTA_PRO.apk
 
       - name: Publicar APK no GitHub
+        shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add ANALISTA_PRO.apk
+          git add -f ANALISTA_PRO.apk
 
           if ! git diff --cached --quiet; then
             git commit -m "Publicar APK ANALISTA PRO"
             git push
           fi
+
 
       - name: Disponibilizar APK para download
         uses: actions/upload-artifact@v4
