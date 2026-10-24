@@ -142,7 +142,7 @@ jobs:
 
           public class MainActivity extends Activity {
               private static final int FILE_REQUEST = 5102;
-              private static final String SITE = "https://oanalistapro.github.io/ANALISTA-PRO.github.io/;
+              private static final String SITE = "https://oanalistapro.github.io/ANALISTA-PRO.github.io/";
               private WebView web;
               private ValueCallback<Uri[]> fileCallback;
 
